@@ -1,5 +1,3 @@
-import javax.tools.DocumentationTool.Location;
-
 public class Playfair implements Cipher {
 
     String key;
