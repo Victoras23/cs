@@ -3,11 +3,9 @@ package lab3;
 import java.math.BigInteger;
 
 public class RSA {
-    private BigInteger p, q, e, n, f_n, d;
+    private BigInteger e, n, f_n, d;
 
     public RSA(BigInteger p, BigInteger q, BigInteger e) {
-        this.p = p;
-        this.q = q;
         this.e = e;
         this.n = p.multiply(q);
         this.f_n = (p.subtract(BigInteger.valueOf(1))).multiply(q.subtract(BigInteger.valueOf(1)));
@@ -35,7 +33,7 @@ public class RSA {
         return intMessageArray;
     }
 
-    private BigInteger[] encryptForStringMessage(String message) {
+    public BigInteger[] encryptForStringMessage(String message) {
         BigInteger[] intMessageArr = strToInt(message);
         BigInteger[] encryptedIntMessageArr = new BigInteger[intMessageArr.length];
         for (int i = 0; i < intMessageArr.length; i++) {
